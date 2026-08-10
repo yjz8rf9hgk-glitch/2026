@@ -403,7 +403,7 @@ const DAYS = [
       {id:"d2-15", time:"15:30", icon:"🚆", title:"搭JR前往西小倉", lines:["門司港駅","｜JR鹿児島本線（20min，¥340）","西小倉駅"]},
       {id:"d2-16", icon:"🏯", title:"小倉城天守閣", chips:[{t:"hours",text:"～20:00"}], map:"小倉城 Kitakyushu"},
       {id:"d2-17", icon:"🍚", title:"晚餐：百年老店鰻魚飯", chips:[{t:"hours",text:"11:00～20:00"},{t:"reservation",text:"已預訂17:30"},{t:"payment",text:"可刷卡"}], map:"鰻魚 田舎庵 Kitakyushu"},
-      {id:"d2-18", icon:"🚄", title:"吃飽搭乘新幹線回到博多車站", lines:["🎫 找綠色窗口或機器兌換實體車票","小倉站","｜山陽新幹線（17min，自由席$299）","博多站"]},
+      {id:"d2-18", icon:"🚄", title:"吃飽搭乘新幹線回到博多車站", lines:["🎫 找綠色窗口或機器兌換實體車票","小倉站","｜山陽新幹線（17min，自由席$299）","博多站"], ticket: "https://drive.google.com/drive/folders/1PHvU26PQcsNUtoxk5HfS7F00cLeaasYG?usp=sharing"},
       {id:"d2-19", icon:"🍴", title:"在博多車站買甜點", "info-1":true},
       {id:"d2-20", icon:"🍡", title:"Imonne Hakata", lines:["冰淇淋麻糬，喜歡的冰淇淋口味要放下面！"], chips:[{t:"hours",text:"～21:00"}], map:"Imonne Hakata Fukuoka"},
       {id:"d2-21", icon:"🍮", title:"治一郎Jiichiro", lines:["年輪蛋糕專專賣，但有名的是布丁"], chips:[{t:"hours",text:"～21:00"}], map:"Jiichiro JR Hakata City"},
@@ -568,9 +568,8 @@ function itemHtml(it){
         '</div>'+
         (lines ? '<div class="item-lines">'+lines+'</div>' : '')+
         (chips ? '<div class="chips">'+chips+'</div>' : '')+
-        map+coupon+ticket
-      '</div>'+
-    '</div>'
+        map+coupon+ticket+
+      '</div></div>'
   );
 }
   
