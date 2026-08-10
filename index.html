@@ -183,6 +183,12 @@
     padding:6px 11px; border-radius:100px; text-decoration:none; -webkit-user-select:none; user-select:none;
   }
   .map-btn:active{transform:scale(0.94);}
+  .ticket-btn{
+    margin-top:8px; margin-left:6px; display: inline-flex; align-items: center; gap:4px;
+    font-size: 12.5px; font-weight: 700; color:#369A9C; background:rgba(37,177,179,0.25);
+    padding:6px 11px; border-radius:100px; text-decoration:none; -webkit-user-select:none; user-select:none;
+  }
+  .ticket-btn:active{transform:scale(0.94);}
   .coupon-btn {
     margin-top:8px; margin-left:6px; display: inline-flex; align-items: center; gap:4px;
     font-size: 12.5px; font-weight: 700; color:#ff2d55; background:rgba(255,45,85,0.1);
@@ -336,7 +342,7 @@
     <a href="https://www.threads.com/@wangbainian/post/DSPZrIDEuqJ?xmt=AQG0jkurrdtAEOKxzJwfxh1IFglzDFrXE63DleeQe45I_A" target="_blank" rel="noopener" class="drugstore-shortcut-btn">
       🫧 天神商圈藥妝店攻略 🪞
     </a>
-    <div class="coupon-hint">💡點擊開啟新分頁👈</div>
+    <div class="coupon-hint">💡 點擊開啟新分頁 👈</div>
   </div>
   
   <div class="ledger-card">
@@ -460,7 +466,7 @@ const DAYS = [
     id:"d5", date:"09/09", weekday:"三", title:"第五日", theme:"大濠公園・博多運河城・賦歸",
     items:[
       {id:"d5-01", time:"08:15", icon:"🚶", title:"出門！到六本松站吃早餐", lines:["🧳 記得先到退房・寄放行李","⌛ 可搭地鐵或公車", "天神南駅","｜地鐵七隈線（10min，¥260）","六本松駅，從2號出站出站步行6min"]},
-      {id:"d5-02", icon:"🐟", title:"早餐：鮭魚日式早餐定食", chips:[{t:"hours",text:"07:00～22:00"},{t:"reservation",text:"已預約9:00"},{t:"payment",text:"可刷卡"}], map:"Robata no Ito Okashi Fukuoka"},
+      {id:"d5-02", icon:"🐟", title:"早餐：鮭魚日式早餐定食", chips:[{t:"hours",text:"07:00～22:00"},{t:"reservation",text:"已預約9:00"},{t:"note",text:"網友說鮭魚比鰻魚好吃"},{t:"payment",text:"可刷卡"}], map:"Robata no Ito Okashi Fukuoka"},
       {id:"d5-03",icon:"🌳", title:"吃飽到大濠公園晃晃散步", map:"大濠公園 Fukuoka","info-1":true},
       {id:"d5-04", icon:"🍵", title:"喝抹茶・吃玉子燒三明治", map:"&LOCALS 大濠公園 Fukuoka"},
       {id:"d5-05", time:"12:00", icon:"🚇", title:"搭乘地鐵前往渡邊通", lines:["六本松駅","｜地鐵七隈線（7min，¥210）","渡辺通駅，往2號出口出站步行4min"]},
@@ -542,7 +548,8 @@ function itemHtml(it){
   const lines = (it.lines||[]).map(l => '<div>'+l+'</div>').join("");
   const chips = (it.chips||[]).map(chipHtml).join("");
   const map = it.map ? '<a class="map-btn" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(it.map)+'" target="_blank" rel="noopener">📍 開啟 Google 地圖</a>' : "";
-  const coupon = it.coupon ? '<a class="coupon-btn" href="'+it.coupon+'" target="_blank" rel="noopener">🎫 優惠券這邊領</a>' : "";
+  const ticket = it.ticket ? '<a class="ticket-btn" href="'+it.ticket+'" target="_blank" rel="noopener">🎫 票券這邊領</a>' : "";
+  const coupon = it.coupon ? '<a class="coupon-btn" href="'+it.coupon+'" target="_blank" rel="noopener">🎟️ 優惠券這邊領</a>' : "";
   const cbStyle = isInfo1OrInfo2 ? 'style="visibility: hidden;"' : '';
   const cbClass = "checkbox" + (done? " checked" : "");
   
@@ -561,7 +568,7 @@ function itemHtml(it){
         '</div>'+
         (lines ? '<div class="item-lines">'+lines+'</div>' : '')+
         (chips ? '<div class="chips">'+chips+'</div>' : '')+
-        map+coupon+
+        map+coupon+ticket
       '</div>'+
     '</div>'
   );
@@ -593,7 +600,7 @@ function renderDayPanel(){
   });
   panel.querySelectorAll("[data-body]").forEach(b => {
     b.addEventListener("click", (e) => {
-      if(e.target.closest(".map-btn") || e.target.closest(".coupon-btn") || e.target.closest(".copy-btn")) return;
+      if(e.target.closest(".map-btn") || e.target.closest(".coupon-btn") || e.target.closest(".ticket-btn") || e.target.closest(".copy-btn")) return;
       toggleItem(e, e.currentTarget.getAttribute("data-body"));
     });
   });
