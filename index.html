@@ -416,7 +416,7 @@ const DAYS = [
   {
     id:"d3", date:"09/07", weekday:"一", title:"第三日", theme:"長崎一日遊",
     items:[
-      {id:"d3-01", time:"07:00", icon:"🚶", title:"出門！到博多車站買早餐", lines:["天神駅", "｜地下鐵空港線（6min，¥210）", "博多駅"]},
+      {id:"d3-01", time:"07:00", icon:"🚶", title:"出門！到博多車站買早餐", chips:[{t:"warning",text:"記得攜帶軍艦島的上陸誓約書"}], lines:["天神駅", "｜地下鐵空港線（6min，¥210）", "博多駅"]},
       {id:"d3-02", icon:"🥖", title:"早餐：好吃麵包", chips:[{t:"hours",text:"07:00～19:00"},{t:"warning",text:"選擇現場排隊外帶"},{t:"payment",text:"可刷卡"},{t:"tip",text:"據說香腸麵包必吃"}], map:"Dacomecca Fukuoka"},
       {id:"d3-03", time:"08:00", icon:"🚄", title:"出發前往長崎（100min）", lines:["🎫 先買車票，自由席來回共¥11,920","博多駅（08:12發車）","｜JR特急接力海鷗號（60min）","武雄溫泉駅，走下車到對面上車","｜西九州新幹線海鷗號（30min）","長崎駅"]},
       {id:"d3-04", time:"09:55", icon:"📍", title:"抵達長崎，搭乘路面電車前往原爆資料館", lines:["長崎站前駅","｜路面電車 赤迫行（5min，¥150）","原爆資料館駅，步行4min"]},
@@ -439,7 +439,7 @@ const DAYS = [
       {id:"d3-21", time:"16:00", icon:"🚆", title:"抵達長崎車站，先買東西帶上車"},
       {id:"d3-22", time:"16:35", icon:"🚄", title:"準備回博多", lines:["長崎駅（16:42發車）","｜西九州新幹線海鷗號（30min）","武雄溫泉駅，走下車到對面上車","｜JR特急接力海鷗號（60min）"]},
       {id:"d3-23", time:"18:15", icon:"🥩", title:"抵達博多，晚餐吃燒肉！", lines:["博多駅","｜地鐵七隈線（5min，¥210）","渡辺通駅，往1號出口出站步行8min"], chips:[{t:"hours",text:"17:00～00:00"},{t:"reservation",text:"已預約18:45"},{t:"payment",text:"可刷卡"}], map:"燒肉上 Fukuoka"},
-      {id:"d3-24", time:"21:10", icon:"🚶", title:"散步15min前往酒吧：Notime Mixology Bar", chips:[{t:"hours",text:"19:00～01:00"},{t:"reservation",text:"已預約21:30，可待2hr"},{t:"payment",text:"可刷卡"},{t:"tip",text:"Google map推薦Four Seasons"}], map:"Notime Mixology Bar Fukuoka"}
+      {id:"d3-24", time:"21:10", icon:"🚶", title:"散步15min前往酒吧：Notime Mixology Bar", chips:[{t:"hours",text:"19:00～01:00"},{t:"reservation",text:"已預約21:30，可待2hr"},{t:"payment",text:"可刷卡"},{t:"tip",text:"網友推薦Four Seasons"}], map:"Notime Mixology Bar Fukuoka"}
     ]
   },
   {
@@ -466,7 +466,7 @@ const DAYS = [
     id:"d5", date:"09/09", weekday:"三", title:"第五日", theme:"大濠公園・博多運河城・賦歸",
     items:[
       {id:"d5-01", time:"08:15", icon:"🚶", title:"出門！到六本松站吃早餐", lines:["🧳 記得先到退房・寄放行李","⌛ 可搭地鐵或公車", "天神南駅","｜地鐵七隈線（10min，¥260）","六本松駅，從2號出站出站步行6min"]},
-      {id:"d5-02", icon:"🐟", title:"早餐：鮭魚日式早餐定食", chips:[{t:"hours",text:"07:00～22:00"},{t:"reservation",text:"已預約9:00"},{t:"note",text:"網友說鮭魚比鰻魚好吃"},{t:"payment",text:"可刷卡"}], map:"Robata no Ito Okashi Fukuoka"},
+      {id:"d5-02", icon:"🐟", title:"早餐：鮭魚日式早餐定食", chips:[{t:"hours",text:"07:00～22:00"},{t:"reservation",text:"已預約9:00"},{t:"tip",text:"網友推薦鮭魚套餐"},{t:"payment",text:"可刷卡"}], map:"Robata no Ito Okashi Fukuoka"},
       {id:"d5-03",icon:"🌳", title:"吃飽到大濠公園晃晃散步", map:"大濠公園 Fukuoka","info-1":true},
       {id:"d5-04", icon:"🍵", title:"喝抹茶・吃玉子燒三明治", map:"&LOCALS 大濠公園 Fukuoka"},
       {id:"d5-05", time:"12:00", icon:"🚇", title:"搭乘地鐵前往渡邊通", lines:["六本松駅","｜地鐵七隈線（7min，¥210）","渡辺通駅，往2號出口出站步行4min"]},
